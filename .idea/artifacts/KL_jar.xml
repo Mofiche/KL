@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="KL:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/KL_jar</output-path>
+    <root id="archive" name="KL.jar">
+      <element id="module-output" name="KL" />
+    </root>
+  </artifact>
+</component>
