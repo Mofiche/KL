@@ -10,8 +10,7 @@ class RSA_key { // Klasse für den besseren Umgang mit den RSA-Schlüsseln
     }
 
     RSA_key() { // Konstruktor
-        p = 0;
-        q = 0;
+
     }
 }
     class Algorithmen {
