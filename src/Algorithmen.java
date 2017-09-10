@@ -1,9 +1,8 @@
 
 
 class RSA_key { // Klasse für den besseren Umgang mit den RSA-Schlüsseln
-    int p = 0;
-    int q = 0;
-
+    int p;
+    int q;
     RSA_key(int p, int q) { // Konstruktor
         p = p;
         q = q;

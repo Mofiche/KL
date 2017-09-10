@@ -30,7 +30,7 @@ public class Test {
 
        **/
 
-      RSA_key[] keys = new RSA_key[2];
+      RSA_key[] keys;
       keys = alg.RSA_Key_generation(11,13,23);
       System.out.println(keys[0].p);
       System.out.println(keys[0].q);
