@@ -9,6 +9,7 @@ public class Test {
 
         Algorithmen alg = new Algorithmen();
 
+      /** System.out.println(alg.erweiterterggt(23,120));
 
 
 
@@ -26,10 +27,21 @@ public class Test {
         c = alg.Vignerre_decrypt(c , "ABCDEF");
         System.out.println(c);
 
+
+       **/
+
+      RSA_key[] keys = new RSA_key[2];
+      keys = alg.RSA_Key_generation(11,13,23);
+      System.out.println(keys[0].p);
+      System.out.println(keys[0].q);
+      System.out.println(keys[1].p);
+      System.out.println(keys[1].q);
+
+
     }
 
 }
-
+/**
 
 // Zerlegt Zahlen mit der Methode von Fermat.
 // Erster Parmeter ist die Zahl n, zweiter optionaler Parameter die Startzahl der Suche
