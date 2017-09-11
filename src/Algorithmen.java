@@ -1,16 +1,15 @@
 
 
 class RSA_key { // Klasse für den besseren Umgang mit den RSA-Schlüsseln
-    int p;
-    int q;
-    RSA_key(int p, int q) { // Konstruktor
-        p = p;
-        q = q;
+
+    int p,q;
+
+    RSA_key(int a, int b) { // Konstruktor
+        p = a;
+        q = b;
     }
 
-    RSA_key() { // Konstruktor
 
-    }
 }
     class Algorithmen {
 
@@ -386,12 +385,19 @@ class RSA_key { // Klasse für den besseren Umgang mit den RSA-Schlüsseln
 
         RSA_key[] RSA_Key_generation(int p, int q, int e) { // Erzeugt die beiden RSA-Schlüssel
 
-            if (primzahltest(p) && primzahltest(q) && teilerfremdheit((p - 1) * (q - 1), e)) { // Abfrage ob p & q prim sind und ob phi(n) und e teilerfremd zueinander sind
+            if (primzahltest(p)
+                    && primzahltest(q)
+                    && teilerfremdheit((p - 1) * (q - 1), e)) { // Abfrage ob p & q prim sind und ob phi(n) und e teilerfremd zueinander sind
                 int n = p * q;  // Berechnung des RSA-Moduls
-                int phi = (p - 1) * (q - 1); // Phi(n)
+                System.out.println(n);
 
-                RSA_key[] keys = new RSA_key[2];
+                int phi = (p - 1) * (q - 1); // Phi(n)
+                System.out.println(phi);
+
+                RSA_key[] keys = new RSA_key[2] ;
                 keys[0] = new RSA_key(e, n);
+
+
 
                 int d = erweiterterggt(e, phi);
                 keys[1] = new RSA_key(d, n);
