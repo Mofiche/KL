@@ -32,10 +32,16 @@ public class Test {
 
       RSA_key[] keys;
       keys = alg.RSA_Key_generation(11,13,23);
-      System.out.println(keys[0].p);
-      System.out.println(keys[0].q);
-      System.out.println(keys[1].p);
-      System.out.println(keys[1].q);
+
+      String a = "Komplexe";
+
+     int[] b =  alg.RSA_encrypt("abcd",keys[0]);
+     for(int i = 0; i < b.length ; i++){
+         System.out.println(b[i]);
+     }
+
+     String c = alg.RSA_decrypt(new int[]{1, 85, 126, 75}, keys[1]);
+        System.out.println(c);
 
 
     }

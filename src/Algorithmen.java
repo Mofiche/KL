@@ -11,7 +11,7 @@ class RSA_key { // Klasse für den besseren Umgang mit den RSA-Schlüsseln
 
 
 }
-    class Algorithmen {
+class Algorithmen {
 
 
         private int ggt(int a, int b) {
@@ -19,13 +19,13 @@ class RSA_key { // Klasse für den besseren Umgang mit den RSA-Schlüsseln
             else return ggt(b, a % b);
         }
 
-        int g = 0, u = 0, v = 0;
+        private int u = 0;
+        private int v = 0;
 
-        public int erweiterterggt(int a, int b) { // ax + by = ggt(a,b)
+        private int erweiterterggt(int a, int b) { // ax + by = ggt(a,b)
 
 
             if (b == 0) {
-                g = a;
                 u = 1;
                 v = 0;
             } else {
@@ -55,7 +55,7 @@ class RSA_key { // Klasse für den besseren Umgang mit den RSA-Schlüsseln
             return true;
         }
 
-        private int char2int(char a) {
+        public int char2int(char a) {
             int ret = 0;
             switch (a) {
                 case 'a':
@@ -389,10 +389,10 @@ class RSA_key { // Klasse für den besseren Umgang mit den RSA-Schlüsseln
                     && primzahltest(q)
                     && teilerfremdheit((p - 1) * (q - 1), e)) { // Abfrage ob p & q prim sind und ob phi(n) und e teilerfremd zueinander sind
                 int n = p * q;  // Berechnung des RSA-Moduls
-                System.out.println(n);
+             //   System.out.println(n);
 
                 int phi = (p - 1) * (q - 1); // Phi(n)
-                System.out.println(phi);
+             //   System.out.println(phi);
 
                 RSA_key[] keys = new RSA_key[2] ;
                 keys[0] = new RSA_key(e, n);
@@ -407,6 +407,35 @@ class RSA_key { // Klasse für den besseren Umgang mit den RSA-Schlüsseln
            } else return null;
         }
 
+
+    int[] RSA_encrypt(String input, RSA_key pub) {
+
+        char[] input_c = input.toLowerCase().toCharArray();
+        int[] output_c = new int[input_c.length];
+
+        for (int i = 0; i < input_c.length; i++) {
+           int in = char2int(input_c[i]);
+           int out = 0;
+
+           out = (int) (Math.pow(in,pub.p)%pub.q);
+           output_c[i] = out;
+
+        }
+        return output_c;
+    }
+
+    String RSA_decrypt(int[] input, RSA_key pri) {
+
+        char[] output_c = new char[input.length];
+
+        for (int i = 0; i < input.length; i++) {
+            int out = 0;
+           out = (int) ((Math.pow(input[i],pri.p)) % pri.q);
+           output_c[i] = int2char(out);
+
+        }
+        return new String(output_c);
+    }
 
         String Caesar_encrypt(String input, int key) {
             String output = "";
