@@ -6,6 +6,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -25,6 +27,12 @@ public class GUI extends Application{
         Scene scene = new Scene(root);
 
         Text txt = (Text) scene.lookup("#txt1");
+        RadioButton rdone = (RadioButton) scene.lookup("#rdc");
+        RadioButton rdtwo = (RadioButton) scene.lookup("#rdv");
+        RadioButton rdtree = (RadioButton) scene.lookup("#rdr");
+        Button btn = (Button)scene.lookup("#btn1");
+
+        btn.setOnAction(event -> onClick());
 
         stage.setScene(scene);
         stage.show();
@@ -35,6 +43,10 @@ public class GUI extends Application{
      */
     public static void main(String[] args) {
         launch(args);
+    }
+
+    void onClick(){
+        JOptionPane.showMessageDialog(null,"CLICK!");
     }
 }
 
