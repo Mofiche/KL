@@ -2,13 +2,50 @@
  * Created by Moritz on 11.09.2017.
  */
 
-import com.sun.org.apache.xml.internal.dtm.ref.DTMDefaultBaseIterators;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
+import javax.swing.*;
+import java.io.IOException;
+
+import static javafx.application.Application.launch;
+
+/**
+ * Created by Moritz on 11.09.2017.
+ */
+public class GUI extends Application{
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("GUIKL.fxml"));
+        Scene scene = new Scene(root);
+
+        Text txt = (Text) scene.lookup("#txt1");
+
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+
+
+/**import com.sun.org.apache.xml.internal.dtm.ref.DTMDefaultBaseIterators;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.*;
+/** import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import java.util.function.DoubleToIntFunction;
@@ -23,8 +60,9 @@ public class GUI extends Application {
     @Override
     public void start(Stage primaryStage) {
 
-        Pane root = null;
+        /**Pane root = null;
         root = new VBox();
+
 
         Button akt = new Button("Auswählen");
         akt.setOnAction((event -> a()));
@@ -48,14 +86,12 @@ public class GUI extends Application {
         root.getChildren().addAll(opening,empty,btnc,btnv,btnr,akt);
 
 
-
-
-
-
         primaryStage.setTitle("Test");
         Scene scene = new Scene(root,300,300);
         primaryStage.setScene(scene);
         primaryStage.show();
+
+
 
     }
 
@@ -67,3 +103,4 @@ public class GUI extends Application {
         System.exit(0);
            }
 }
+**/
