@@ -6,10 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b527153-98bf-4dc7-96e9-a5f24fe846a0" name="Default" comment="BIB 1.0">
+    <list default="true" id="0b527153-98bf-4dc7-96e9-a5f24fe846a0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KL/Algorithmen.class" afterPath="$PROJECT_DIR$/out/production/KL/Algorithmen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KL/Test.class" afterPath="$PROJECT_DIR$/out/production/KL/Test.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Algorithmen.java" afterPath="$PROJECT_DIR$/src/Algorithmen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test.java" afterPath="$PROJECT_DIR$/src/Test.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -447,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505133547319</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="BIB 1.0">
+      <created>1505136338846</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1505136338846</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
