@@ -7,7 +7,6 @@ public class Test {
 
         Algorithmen alg = new Algorithmen();
 
-      /** System.out.println(alg.erweiterterggt(23,120));
 
 
 
@@ -26,27 +25,29 @@ public class Test {
         System.out.println(c);
 
 
-       **/
+
+
+      final long timestart = System.nanoTime();
 
         BigInteger[] keys ;
-        keys = alg.RSA(11,13);
+        keys = alg.RSA(11,13); // {mod,pub,pri}
 
-        BigInteger[] input;
-        String a = "abc";
-        input = alg.String2BigIntegerArray(a);
+        String ad = "Komplexe Leistung";
+        BigInteger[] b = alg.RSA_encrypt(ad,keys[1],keys[0]);
+        String cd = alg.RSA_decrypt(b,keys[2],keys[0]);
+        System.out.println(cd);
 
-        BigInteger[] ergebnis = new BigInteger[input.length];
-        for(int i = 0; i < input.length ; i++) {
-            ergebnis[i] = alg.RSA_encrypt(input[i], keys[1], keys[0]);
-            System.out.println(ergebnis[i]);
-        }
 
-        BigInteger[] deergebnis = new BigInteger[ergebnis.length];
-        for(int i = 0; i < ergebnis.length ; i++) {
-            deergebnis[i] = alg.RSA_encrypt(ergebnis[i], keys[2], keys[0]);
-            System.out.println(deergebnis[i]);
-        }
+        final long timeend = System.nanoTime();
+        final long diff = timeend -  timestart;
+        System.out.println(diff);
+        System.out.print(diff/1000000);
+
+
+
     }
+
+
 
 }
 /**
