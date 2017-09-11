@@ -1,7 +1,5 @@
-
-
-
-
+import java.math.BigInteger;
+import java.security.interfaces.RSAKey;
 
 public class Test {
 
@@ -30,20 +28,24 @@ public class Test {
 
        **/
 
-      RSA_key[] keys;
-      keys = alg.RSA_Key_generation(11,13,23);
+        BigInteger[] keys ;
+        keys = alg.RSA(11,13);
 
-      String a = "Komplexe";
+        BigInteger[] input;
+        String a = "abc";
+        input = alg.String2BigIntegerArray(a);
 
-     int[] b =  alg.RSA_encrypt("abcd",keys[0]);
-     for(int i = 0; i < b.length ; i++){
-         System.out.println(b[i]);
-     }
+        BigInteger[] ergebnis = new BigInteger[input.length];
+        for(int i = 0; i < input.length ; i++) {
+            ergebnis[i] = alg.RSA_encrypt(input[i], keys[1], keys[0]);
+            System.out.println(ergebnis[i]);
+        }
 
-     String c = alg.RSA_decrypt(new int[]{1, 85, 126, 75}, keys[1]);
-        System.out.println(c);
-
-
+        BigInteger[] deergebnis = new BigInteger[ergebnis.length];
+        for(int i = 0; i < ergebnis.length ; i++) {
+            deergebnis[i] = alg.RSA_encrypt(ergebnis[i], keys[2], keys[0]);
+            System.out.println(deergebnis[i]);
+        }
     }
 
 }

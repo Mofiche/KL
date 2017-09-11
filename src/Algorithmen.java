@@ -1,25 +1,13 @@
+import java.math.BigInteger;
 
-
-class RSA_key { // Klasse für den besseren Umgang mit den RSA-Schlüsseln
-
-    int p,q;
-
-    RSA_key(int a, int b) { // Konstruktor
-        p = a;
-        q = b;
-    }
-
-
-}
 class Algorithmen {
-
 
         private int ggt(int a, int b) {
             if (b == 0) return a;      // Algorithmus für den größten gemeinsamen Teiler
             else return ggt(b, a % b);
         }
 
-        private int u = 0;
+   /**     private int u = 0;
         private int v = 0;
 
         private int erweiterterggt(int a, int b) { // ax + by = ggt(a,b)
@@ -38,6 +26,7 @@ class Algorithmen {
             return u;
 
         }
+      **/
 
         private int kgv(int a, int b) {
             if (a == b) return a;  // Algorithmus für das kleinste gemeinsame Vielfache
@@ -382,60 +371,18 @@ class Algorithmen {
             }
             return ret;
         } // Funktion zur Umwandlung von Zahlen in Buchstaben
-
-        RSA_key[] RSA_Key_generation(int p, int q, int e) { // Erzeugt die beiden RSA-Schlüssel
-
-            if (primzahltest(p)
-                    && primzahltest(q)
-                    && teilerfremdheit((p - 1) * (q - 1), e)) { // Abfrage ob p & q prim sind und ob phi(n) und e teilerfremd zueinander sind
-                int n = p * q;  // Berechnung des RSA-Moduls
-             //   System.out.println(n);
-
-                int phi = (p - 1) * (q - 1); // Phi(n)
-             //   System.out.println(phi);
-
-                RSA_key[] keys = new RSA_key[2] ;
-                keys[0] = new RSA_key(e, n);
+    
+        public BigInteger[] String2BigIntegerArray(String input){
 
 
+            char[] input_c = input.toCharArray();
+            BigInteger[] output = new BigInteger[input_c.length];
 
-                int d = erweiterterggt(e, phi);
-                keys[1] = new RSA_key(d, n);
-
-
-                return keys;
-           } else return null;
+            for (int i = 0 ; i < input_c.length; i++ ) output[i] = new BigInteger(String.valueOf(char2int(input_c[i])));
+            
+            return output;
         }
 
-
-    int[] RSA_encrypt(String input, RSA_key pub) {
-
-        char[] input_c = input.toLowerCase().toCharArray();
-        int[] output_c = new int[input_c.length];
-
-        for (int i = 0; i < input_c.length; i++) {
-           int in = char2int(input_c[i]);
-           int out = 0;
-
-           out = (int) (Math.pow(in,pub.p)%pub.q);
-           output_c[i] = out;
-
-        }
-        return output_c;
-    }
-
-    String RSA_decrypt(int[] input, RSA_key pri) {
-
-        char[] output_c = new char[input.length];
-
-        for (int i = 0; i < input.length; i++) {
-            int out = 0;
-           out = (int) ((Math.pow(input[i],pri.p)) % pri.q);
-           output_c[i] = int2char(out);
-
-        }
-        return new String(output_c);
-    }
 
         String Caesar_encrypt(String input, int key) {
             String output = "";
@@ -510,6 +457,29 @@ class Algorithmen {
 
             return new String(output_c);
         }
+
+    BigInteger[] RSA(int a, int b){
+
+
+
+        BigInteger p = new BigInteger(String.valueOf(a));
+        BigInteger q = new BigInteger(String.valueOf(b));
+        BigInteger mod = p.multiply(q);
+        BigInteger phi = (p.subtract(BigInteger.ONE)).multiply(q.subtract(BigInteger.ONE));
+
+        BigInteger public_k = new BigInteger("23"); // 5.Fermat Zahl = 2^16 +1
+        BigInteger private_k = public_k.modInverse(phi);
+
+        return new BigInteger[]{mod,public_k, private_k};
+    }
+
+        BigInteger RSA_decrypt(BigInteger input, BigInteger private_k , BigInteger mod){
+        return input.modPow(private_k,mod);
+         }
+
+        BigInteger RSA_encrypt(BigInteger input , BigInteger public_k , BigInteger mod){
+        return input.modPow(public_k,mod);
+    }
 
 
     }
