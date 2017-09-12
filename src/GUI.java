@@ -35,17 +35,27 @@ public class GUI extends Application{
 
         TextArea txt = (TextArea) root.lookup("#ct1");
         TextField key_t = (TextField) root.lookup("#ct2");
+        Button btnv = (Button) root.lookup("#btnv");
+        Button btne = (Button) root.lookup("#btne");
 
-        key_t.setOnAction(e -> {
-            String key_s = key_t.getText();
-            System.out.println(key_s);
-            //int key = Integer.getInteger(key_s);
-            //if(key <= 0 || key > 25){
-            //    JOptionPane.showMessageDialog(null,"Bitte geben sie eine Zahl zwischen 1 und 25 ein");
-            //}
-            //else{
-             //   System.out.print("ln");//txt.setText(alg.Caesar_encrypt(txt.getText(),key));
-            //}
+        btnv.setOnAction(e -> {
+            Integer key = Integer.parseInt(key_t.getText());
+            if(key <= 0 || key > 25){
+                JOptionPane.showMessageDialog(null,"Bitte geben sie eine Zahl zwischen 1 und 25 ein");
+            }
+            else{
+                txt.setText(alg.Caesar_encrypt(txt.getText().toLowerCase(),key));
+            }
+        });
+
+        btne.setOnAction(e -> {
+            Integer key = Integer.parseInt(key_t.getText());
+            if(key <= 0 || key > 25){
+                JOptionPane.showMessageDialog(null,"Bitte geben sie eine Zahl zwischen 1 und 25 ein");
+            }
+            else{
+                txt.setText(alg.Caesar_decrypt(txt.getText().toLowerCase(),key));
+            }
         });
 
 
