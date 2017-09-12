@@ -8,6 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -23,20 +25,35 @@ public class GUI extends Application{
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("GUIKL.fxml"));
+
+        Algorithmen alg = new Algorithmen();
+
+        Parent root = FXMLLoader.load(getClass().getResource("guikl.fxml"));
+        stage.setResizable(false);
+        stage.setTitle("Verschlüsselungverfahren");
         Scene scene = new Scene(root);
 
-        Text txt = (Text) scene.lookup("#txt1");
-        RadioButton rdone = (RadioButton) scene.lookup("#rdc");
-        RadioButton rdtwo = (RadioButton) scene.lookup("#rdv");
-        RadioButton rdtree = (RadioButton) scene.lookup("#rdr");
-        Button btn = (Button)scene.lookup("#btn1");
+        TextArea txt = (TextArea) root.lookup("#ct1");
+        TextField key_t = (TextField) root.lookup("#ct2");
 
-        btn.setOnAction(event -> onClick());
+        key_t.setOnAction(e -> {
+            String key_s = key_t.getText();
+            System.out.println(key_s);
+            //int key = Integer.getInteger(key_s);
+            //if(key <= 0 || key > 25){
+            //    JOptionPane.showMessageDialog(null,"Bitte geben sie eine Zahl zwischen 1 und 25 ein");
+            //}
+            //else{
+             //   System.out.print("ln");//txt.setText(alg.Caesar_encrypt(txt.getText(),key));
+            //}
+        });
+
+
 
         stage.setScene(scene);
         stage.show();
     }
+
 
     /**
      * @param args the command line arguments
@@ -45,9 +62,7 @@ public class GUI extends Application{
         launch(args);
     }
 
-    void onClick(){
-        JOptionPane.showMessageDialog(null,"CLICK!");
-    }
+
 }
 
 
