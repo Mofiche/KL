@@ -353,35 +353,34 @@ class Algorithmen {
 
 
         String Caesar_encrypt(String input, int key) {
-            String output;
 
             char[] input_c = input.toCharArray();
             char[] output_c = new char[input_c.length];
 
-            for (int i = 0; i < input_c.length; i++) {
-                char a = input_c[i];
-                int b = char2int(a);
-                a = int2char(b + (key % 26)); // key%26 für key>26
-                output_c[i] = a;
+            for(int i = 0;i< input_c.length;i++){
+                int versch = (input_c[i] + key)%128;
+
+                output_c[i] = (char) versch;
             }
-            output = new String(output_c);
-            return output;
+
+            return new String(output_c);
         }
 
         String Caesar_decrypt(String input, int key) {
-            String output;
 
             char[] input_c = input.toCharArray();
             char[] output_c = new char[input_c.length];
 
-            for (int i = 0; i < input_c.length; i++) {
-                char a = input_c[i];
-                int b = char2int(a);
-                a = int2char(b - (key % 26)); // key%26 für key>26
-                output_c[i] = a;
+            for(int i = 0;i< input_c.length;i++){
+                int versch;
+                if(input_c[i] -key < 0) versch = input_c[i] - key + 128;
+                else versch = (input_c[i] -key)%128;
+
+                output_c[i] = (char) versch;
             }
-            output = new String(output_c);
-            return output;
+
+            return new String(output_c);
+
         }
 
         String Vignerre_encrypt(String input, String key) {
@@ -426,7 +425,7 @@ class Algorithmen {
             return new String(output_c);
         }
 
-    BigInteger[] RSA(int a, int b) {
+        BigInteger[] RSA(int a, int b) {
 
 
 

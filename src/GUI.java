@@ -34,6 +34,7 @@ public class GUI extends Application{
         Scene scene = new Scene(root);
 
         TextArea txt = (TextArea) root.lookup("#ct1");
+        TextArea txt2 = (TextArea) root.lookup("#ct3");
         TextField key_t = (TextField) root.lookup("#ct2");
         Button btnv = (Button) root.lookup("#btnv");
         Button btne = (Button) root.lookup("#btne");
@@ -44,7 +45,7 @@ public class GUI extends Application{
                 JOptionPane.showMessageDialog(null,"Bitte geben sie eine Zahl zwischen 1 und 25 ein");
             }
             else{
-                txt.setText(alg.Caesar_encrypt(txt.getText().toLowerCase(),key));
+                txt2.setText(alg.Caesar_encrypt(txt.getText().toLowerCase(),key));
             }
         });
 
@@ -54,7 +55,7 @@ public class GUI extends Application{
                 JOptionPane.showMessageDialog(null,"Bitte geben sie eine Zahl zwischen 1 und 25 ein");
             }
             else{
-                txt.setText(alg.Caesar_decrypt(txt.getText().toLowerCase(),key));
+                txt2.setText(alg.Caesar_decrypt(txt.getText().toLowerCase(),key));
             }
         });
 

@@ -11,7 +11,7 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <VBox prefHeight="200.0" prefWidth="100.0">
+                  <VBox layoutX="-6.0" prefHeight="400.0" prefWidth="640.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="640.0" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="               Bitte geben sie den Text zum Ver- bzw. Entschlüsseln ein" wrappingWidth="640.0">
@@ -19,16 +19,15 @@
                               <Font size="18.0" />
                            </font>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="640.0" />
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
-                              <TextArea fx:id="ct1" maxWidth="500.0" />
+                              <TextArea fx:id="ct1" maxWidth="500.0" prefHeight="100.0" prefWidth="465.0" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
                            </children>
                         </HBox>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="640.0" />
-                        <HBox prefHeight="100.0" prefWidth="200.0">
+                        <HBox prefHeight="35.0" prefWidth="200.0">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bitte geben sie einen Schlüssel zwischen 1 und 25 ein : " wrappingWidth="440.0">
@@ -37,6 +36,27 @@
                                  </font>
                               </Text>
                               <TextField fx:id="ct2" maxHeight="10.0" maxWidth="30.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="25.0" prefWidth="200.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                              <Button fx:id="btnv" mnemonicParsing="false" text="Verschlüsseln" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="300.0" />
+                              <Button fx:id="btne" mnemonicParsing="false" text="Entschlüsseln" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="640.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="640.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                              <TextArea fx:id="ct3" maxWidth="500.0" prefHeight="200.0" prefWidth="465.0" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
                            </children>
                         </HBox>
