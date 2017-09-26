@@ -14,6 +14,9 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import javax.swing.*;
+import java.math.BigInteger;
+import java.security.interfaces.RSAKey;
+import java.util.Arrays;
 
 /**
  * Created by Moritz on 11.09.2017.
@@ -44,6 +47,15 @@ public class GUI extends Application{
         Button btnv2 = (Button) root.lookup("#btnv2");
         Button btne2 = (Button) root.lookup("#btne2");
 
+        TextArea txt_r = (TextArea) root.lookup("#rt1");
+        TextArea txt2_r = (TextArea) root.lookup("#rt4");
+        txt2_r.setEditable(false);
+        TextField key_r = (TextField) root.lookup("#rt2");
+        TextField key2_r = (TextField) root.lookup("#rt3");
+        Button btnv3 = (Button) root.lookup("#btnv3");
+        Button btne3 = (Button) root.lookup("#btne3");
+
+
         btnv.setOnAction(e -> {
             Integer key = Integer.parseInt(key_c.getText());
             if(key <= 0 || key > 25){
@@ -70,6 +82,18 @@ public class GUI extends Application{
 
         btne2.setOnAction(e -> {
             txt2_v.setText(alg.Vignerre_decrypt(txt_v.getText().toLowerCase(),key_v.getText()));
+        });
+
+
+
+        btnv3.setOnAction(e -> {
+            BigInteger[] keys = alg.RSA(Integer.parseInt(key_r.getText()),Integer.parseInt(key2_r.getText()));
+            txt2_r.setText(alg.BigIntegerArray2String(alg.RSA_encrypt(txt_r.getText().toLowerCase(), keys[0], BigInteger.valueOf(65537))));
+        });
+
+        btne3.setOnAction(e -> {
+            BigInteger[] keys = alg.RSA(Integer.parseInt(key_r.getText()),Integer.parseInt(key2_r.getText()));
+            txt2_r.setText(alg.RSA_decrypt(alg.String2BigIntegerArray(txt_r.getText().toLowerCase()),keys[1], BigInteger.valueOf(65537)));
         });
 
 

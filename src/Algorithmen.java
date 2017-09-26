@@ -1,8 +1,28 @@
+import javax.crypto.Cipher;
 import java.math.BigInteger;
+import java.security.*;
+
+
 
 class Algorithmen {
 
-        private BigInteger[] String2BigIntegerArray(String input){
+    private PrivateKey privateKey;
+    private PublicKey publicKey;
+
+    Algorithmen() throws NoSuchAlgorithmException {
+        KeyPair keyPair = buildKeyPair();
+        publicKey = keyPair.getPublic();
+        privateKey = keyPair.getPrivate();
+    }
+
+       private static KeyPair buildKeyPair() throws NoSuchAlgorithmException{
+        final int keySize = 512;
+        KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
+        keyPairGenerator.initialize(keySize);
+        return keyPairGenerator.genKeyPair();
+       }
+
+       BigInteger[] String2BigIntegerArray(String input){
 
 
             char[] input_c = input.toCharArray();
@@ -13,7 +33,7 @@ class Algorithmen {
             return output;
         }
 
-        private String BigIntegerArray2String(BigInteger[] input){
+       String BigIntegerArray2String(BigInteger[] input){
 
                char[] output_c = new char[input.length];
 
@@ -22,6 +42,7 @@ class Algorithmen {
              }
                 return new String(output_c);
     }
+
 
 
         String Caesar_encrypt(String str, int key) {
@@ -62,7 +83,6 @@ class Algorithmen {
             return ret.toLowerCase();
         }
 
-
         String Vignerre_decrypt(String input, String key) {
             String ret = "";
             input = input.replaceAll("[^a-zA-Z]","").toUpperCase();
@@ -72,7 +92,6 @@ class Algorithmen {
             }
             return ret.toLowerCase();
             }
-
 
         BigInteger[] RSA(int a, int b) {
 
@@ -113,6 +132,24 @@ class Algorithmen {
             return ergebnis;
         }
 
+    String RSA_e (String input) throws Exception {
 
+            Cipher cipher = Cipher.getInstance("RSA");
+            cipher.init(Cipher.ENCRYPT_MODE, publicKey);
+            byte[] versch = cipher.doFinal(input.getBytes());
+
+            return new String(versch);
+        }
+
+    String RSA_d (String input) throws Exception {
+
+        Cipher cipher = Cipher.getInstance("RSA");
+        cipher.init(Cipher.DECRYPT_MODE, privateKey);
+        byte[] versch = cipher.doFinal(input.getBytes());
+
+
+        return new String(versch);
     }
+
+}
 
