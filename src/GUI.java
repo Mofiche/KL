@@ -14,9 +14,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import javax.swing.*;
-import java.io.IOException;
-
-import static javafx.application.Application.launch;
 
 /**
  * Created by Moritz on 11.09.2017.
@@ -33,30 +30,46 @@ public class GUI extends Application{
         stage.setTitle("Verschlüsselungverfahren");
         Scene scene = new Scene(root);
 
-        TextArea txt = (TextArea) root.lookup("#ct1");
-        TextArea txt2 = (TextArea) root.lookup("#ct3");
-        TextField key_t = (TextField) root.lookup("#ct2");
+        TextArea txt_c = (TextArea) root.lookup("#ct1");
+        TextArea txt2_c = (TextArea) root.lookup("#ct3");
+        txt2_c.setEditable(false);
+        TextField key_c = (TextField) root.lookup("#ct2");
         Button btnv = (Button) root.lookup("#btnv");
         Button btne = (Button) root.lookup("#btne");
 
+        TextArea txt_v = (TextArea) root.lookup("#vt1");
+        TextArea txt2_v = (TextArea) root.lookup("#vt3");
+        txt2_v.setEditable(false);
+        TextField key_v = (TextField) root.lookup("#vt2");
+        Button btnv2 = (Button) root.lookup("#btnv2");
+        Button btne2 = (Button) root.lookup("#btne2");
+
         btnv.setOnAction(e -> {
-            Integer key = Integer.parseInt(key_t.getText());
+            Integer key = Integer.parseInt(key_c.getText());
             if(key <= 0 || key > 25){
                 JOptionPane.showMessageDialog(null,"Bitte geben sie eine Zahl zwischen 1 und 25 ein");
             }
             else{
-                txt2.setText(alg.Caesar_encrypt(txt.getText().toLowerCase(),key));
+                txt2_c.setText(alg.Caesar_encrypt(txt_c.getText().toLowerCase(),key));
             }
         });
 
         btne.setOnAction(e -> {
-            Integer key = Integer.parseInt(key_t.getText());
+            Integer key = Integer.parseInt(key_c.getText());
             if(key <= 0 || key > 25){
                 JOptionPane.showMessageDialog(null,"Bitte geben sie eine Zahl zwischen 1 und 25 ein");
             }
             else{
-                txt2.setText(alg.Caesar_decrypt(txt.getText().toLowerCase(),key));
+                txt2_c.setText(alg.Caesar_decrypt(txt_c.getText().toLowerCase(),key));
             }
+        });
+
+        btnv2.setOnAction(e -> {
+            txt2_v.setText(alg.Vignerre_encrypt(txt_v.getText().toLowerCase(),key_v.getText()));
+        });
+
+        btne2.setOnAction(e -> {
+            txt2_v.setText(alg.Vignerre_decrypt(txt_v.getText().toLowerCase(),key_v.getText()));
         });
 
 
