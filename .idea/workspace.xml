@@ -7,10 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b527153-98bf-4dc7-96e9-a5f24fe846a0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/KL/Algorithmen.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KL/GUI.class" afterPath="$PROJECT_DIR$/out/production/KL/GUI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KL/Test.class" afterPath="$PROJECT_DIR$/out/production/KL/Test.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Algorithmen.java" afterPath="$PROJECT_DIR$/src/Algorithmen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI.java" afterPath="$PROJECT_DIR$/src/GUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUIKL.fxml" afterPath="$PROJECT_DIR$/src/GUIKL.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,37 +34,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Algorithmen.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Algorithmen.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Algorithmen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="35" column="7" lean-forward="false" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+            <state relative-caret-position="400">
+              <caret line="34" column="9" lean-forward="false" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#String2BigIntegerArray#0;class#Algorithmen#0" expanded="false" />
-                <element signature="method#BigIntegerArray2String#0;class#Algorithmen#0" expanded="false" />
                 <element signature="method#Caesar_encrypt#0;class#Algorithmen#0" expanded="false" />
                 <element signature="method#Caesar_decrypt#0;class#Algorithmen#0" expanded="false" />
                 <element signature="method#Vignerre_encrypt#0;class#Algorithmen#0" expanded="false" />
                 <element signature="method#Vignerre_decrypt#0;class#Algorithmen#0" expanded="false" />
                 <element signature="method#RSA_encrypt#0;class#Algorithmen#0" expanded="false" />
-                <element signature="method#RSA_e#0;class#Algorithmen#0" expanded="false" />
-                <element signature="method#RSA_d#0;class#Algorithmen#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="95" column="51" lean-forward="false" selection-start-line="95" selection-start-column="51" selection-end-line="95" selection-end-column="51" />
+            <state relative-caret-position="220">
+              <caret line="131" column="7" lean-forward="true" selection-start-line="131" selection-start-column="7" selection-end-line="131" selection-end-column="7" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <marker date="1506460194990" expanded="false" signature="4196:4207" ph=" { " />
-                <marker date="1506460194990" expanded="false" signature="4220:4226" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -112,8 +108,8 @@
         <option value="$PROJECT_DIR$/src/t.java" />
         <option value="$PROJECT_DIR$/src/test.java" />
         <option value="$PROJECT_DIR$/src/run.java" />
-        <option value="$PROJECT_DIR$/src/Algorithmen.java" />
         <option value="$PROJECT_DIR$/src/GUI.java" />
+        <option value="$PROJECT_DIR$/src/Algorithmen.java" />
       </list>
     </option>
   </component>
@@ -615,7 +611,14 @@
       <option name="project" value="LOCAL" />
       <updated>1506440592368</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="GUI 0.8 RSA problematisch">
+      <created>1506460249603</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1506460249603</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView">
@@ -709,7 +712,8 @@
     <MESSAGE value="GUI 0.5" />
     <MESSAGE value="GUI 0.6 - CAESER FERTIG" />
     <MESSAGE value="GUI 0.7 - VIGENERRE 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI 0.7 - VIGENERRE 1" />
+    <MESSAGE value="GUI 0.8 RSA problematisch" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI 0.8 RSA problematisch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -729,15 +733,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#String2BigIntegerArray#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#BigIntegerArray2String#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#RSA_encrypt#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_e#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_d#0;class#Algorithmen#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -749,15 +749,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#String2BigIntegerArray#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#BigIntegerArray2String#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#RSA_encrypt#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_e#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_d#0;class#Algorithmen#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -771,15 +767,11 @@
           <caret line="419" column="9" lean-forward="true" selection-start-line="419" selection-start-column="9" selection-end-line="419" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#String2BigIntegerArray#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#BigIntegerArray2String#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#RSA_encrypt#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_e#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_d#0;class#Algorithmen#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -790,15 +782,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#String2BigIntegerArray#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#BigIntegerArray2String#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#RSA_encrypt#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_e#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_d#0;class#Algorithmen#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -810,15 +798,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#String2BigIntegerArray#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#BigIntegerArray2String#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#RSA_encrypt#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_e#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_d#0;class#Algorithmen#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -830,15 +814,11 @@
           <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#String2BigIntegerArray#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#BigIntegerArray2String#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#RSA_encrypt#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_e#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_d#0;class#Algorithmen#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -850,15 +830,11 @@
           <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#String2BigIntegerArray#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#BigIntegerArray2String#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#RSA_encrypt#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_e#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_d#0;class#Algorithmen#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -870,15 +846,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#String2BigIntegerArray#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#BigIntegerArray2String#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#RSA_encrypt#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_e#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_d#0;class#Algorithmen#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -890,15 +862,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#String2BigIntegerArray#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#BigIntegerArray2String#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#RSA_encrypt#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_e#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_d#0;class#Algorithmen#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -910,15 +878,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#String2BigIntegerArray#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#BigIntegerArray2String#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#RSA_encrypt#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_e#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_d#0;class#Algorithmen#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -953,6 +917,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1102,34 +1067,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="131" column="7" lean-forward="true" selection-start-line="131" selection-start-column="7" selection-end-line="131" selection-end-column="7" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Algorithmen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="35" column="7" lean-forward="false" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+        <state relative-caret-position="400">
+          <caret line="34" column="9" lean-forward="false" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#String2BigIntegerArray#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#BigIntegerArray2String#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Caesar_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_encrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#Vignerre_decrypt#0;class#Algorithmen#0" expanded="false" />
             <element signature="method#RSA_encrypt#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_e#0;class#Algorithmen#0" expanded="false" />
-            <element signature="method#RSA_d#0;class#Algorithmen#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="95" column="51" lean-forward="false" selection-start-line="95" selection-start-column="51" selection-end-line="95" selection-end-column="51" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <marker date="1506460194990" expanded="false" signature="4196:4207" ph=" { " />
-            <marker date="1506460194990" expanded="false" signature="4220:4226" ph=" }" />
           </folding>
         </state>
       </provider>

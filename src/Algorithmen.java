@@ -4,8 +4,13 @@ import java.security.*;
 
 
 
+// Online auf https://www.github.com/Mofiche/KL
+
+// Großflächig auskommentierte Bereichte sind grad noch nicht funktionstüchtig bzw eine noch nicht funktionierende Alternative
+
 class Algorithmen {
 
+    /**
     private PrivateKey privateKey;
     private PublicKey publicKey;
 
@@ -21,8 +26,11 @@ class Algorithmen {
         keyPairGenerator.initialize(keySize);
         return keyPairGenerator.genKeyPair();
        }
+**/
 
-       BigInteger[] String2BigIntegerArray(String input){
+
+
+     BigInteger[] String2BigIntegerArray(String input){
 
 
             char[] input_c = input.toCharArray();
@@ -93,7 +101,9 @@ class Algorithmen {
             return ret.toLowerCase();
             }
 
-        BigInteger[] RSA(int a, int b) {
+
+
+       BigInteger[] RSA(int a, int b) {
 
 
 
@@ -132,7 +142,10 @@ class Algorithmen {
             return ergebnis;
         }
 
-    String RSA_e (String input) throws Exception {
+
+
+ /**
+    String RSA_e (String input) throws Exception {ß
 
             Cipher cipher = Cipher.getInstance("RSA");
             cipher.init(Cipher.ENCRYPT_MODE, publicKey);
@@ -150,6 +163,6 @@ class Algorithmen {
 
         return new String(versch);
     }
-
+    **/
 }
 

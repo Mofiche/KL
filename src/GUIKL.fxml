@@ -162,9 +162,9 @@
                         <HBox prefHeight="25.0" prefWidth="200.0">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
-                              <Button fx:id="btnv" mnemonicParsing="false" text="Verschlüsseln" />
+                              <Button fx:id="btnv3" mnemonicParsing="false" text="Verschlüsseln" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="300.0" />
-                              <Button fx:id="btne" mnemonicParsing="false" text="Entschlüsseln" />
+                              <Button fx:id="btne3" mnemonicParsing="false" text="Entschlüsseln" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
                            </children>
                         </HBox>
