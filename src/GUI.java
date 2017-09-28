@@ -1,8 +1,5 @@
-/**
- * Created by Moritz on 11.09.2017.
- */
-
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,8 +8,14 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import javax.swing.*;
 import java.math.BigInteger;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 import java.util.Objects;
 
 public class GUI extends Application{
@@ -22,6 +25,8 @@ public class GUI extends Application{
 
         // Algorithmen Bibliothek wird initalisiert
         Algorithmen alg = new Algorithmen();
+
+        byte[] zwischen;
 
         Parent root = FXMLLoader.load(getClass().getResource("guikl.fxml")); // Design der GUI wird geladen
         stage.setResizable(false);  // Das Fenster kann nicht durch den Benutzer in der Größe verändert werden
@@ -88,8 +93,8 @@ public class GUI extends Application{
         //Aktion des Verschlüsselungsknopfes der Vigenerre-Chiffre wird mittels Lamda Befehl definiert
         btnv2.setOnAction(e -> {
             // Es wird geprüft ob das Eingabefeld des Schlüssels leer ist
-            if(Objects.equals(txt_v.getText(), "")) {
-                txt2_v.setText(alg.Vignerre_encrypt( // Die entsprechende Methode wird aufgerufen
+            if(!txt_v.getText().isEmpty()) {
+                txt2_v.setText(alg.Vigenere_encrypt( // Die entsprechende Methode wird aufgerufen
                         txt_v.getText().toLowerCase(), key_v.getText())); // die benötigten Parameter werden übergeben
             }
         });
@@ -97,35 +102,40 @@ public class GUI extends Application{
 
         //Aktion des Entschlüsselungsknopfes der Vigenerre-Chiffre wird mittels Lamda Befehl definiert
         btne2.setOnAction(e -> {
-            if(Objects.equals(txt_v.getText(), "")) { // Es wird geprüft ob das Eingabefeld des Schlüssels leer ist
-                txt2_v.setText(alg.Vignerre_decrypt(    // Die entsprechende Methode wird aufgerufen
+            if(!txt_v.getText().isEmpty()) { // Es wird geprüft ob das Eingabefeld des Schlüssels leer ist
+                txt2_v.setText(alg.Vigenere_decrypt(    // Die entsprechende Methode wird aufgerufen
                         txt_v.getText().toLowerCase(), key_v.getText())); // die benötigten Parameter werden übergeben
             }
         });
 
 
-        //Aktion des Verschlüsselungsknopfes der RSA-Chiffre wird mittels Lamda Befehl definiert
-        btnv3.setOnAction(e -> {
-            BigInteger[] keys = alg.RSA(Integer.parseInt(key_r.getText()),Integer.parseInt(key2_r.getText())); // RSA Schlüssel werdem generiert
-            txt2_r.setText( // Die entsprechende Methode wird aufgerufen
-                    alg.BigIntegerArray2String( // Methode zur Typ-Konvertierung
-                            alg.RSA_encrypt(txt_r.getText().toLowerCase(), keys[0], BigInteger.valueOf(65537))));
-                            // die benötigten Parameter werden übergeben
-        });
+       btnv3.setOnAction( e -> {
+           txt2_r.setText(alg.RSA_encrypt(txt_r.getText(),new RSAKey(23,143)));
+       });
 
-        //Aktion des Entschlüsselungsknopfes der RSA-Chiffre wird mittels Lamda Befehl definiert
-        btne3.setOnAction(e -> {
-            BigInteger[] keys = alg.RSA(Integer.parseInt(key_r.getText()),Integer.parseInt(key2_r.getText())); // RSA Schlüssel werdem generiert
-            txt2_r.setText(alg.RSA_decrypt( // Methode zur Typ-Konvertierung
-                    alg.String2BigIntegerArray(txt_r.getText().toLowerCase()),keys[1], BigInteger.valueOf(65537)));
-            // die benötigten Parameter werden übergeben
-        });
+
+
+       btne3.setOnAction(e -> {
+           txt2_r.setText(alg.RSA_decrypt(txt_r.getText(),new RSAKey(47,143)));
+
+       });
 
 
 
         // Das Fenster wird "fertig" gemacht und erscheint
         stage.setScene(scene);
         stage.show();
+    }
+
+    private String b2s(byte[] bytes) {
+       String ret = "";
+
+        for (byte a: bytes
+             ) {
+            ret += (char) a;
+        }
+
+        return ret;
     }
 
 
