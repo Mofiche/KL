@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <tabs>
+      <Tab text="Cäsar Chiffre">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <VBox layoutX="-6.0" prefHeight="400.0" prefWidth="640.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="640.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="               Bitte geben sie den Text zum Ver- bzw. Entschlüsseln ein" wrappingWidth="640.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                              <TextArea fx:id="ct1" maxWidth="500.0" prefHeight="100.0" prefWidth="465.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                           </children>
+                        </HBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="640.0" />
+                        <HBox prefHeight="35.0" prefWidth="200.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bitte geben sie einen Schlüssel zwischen 1 und 25 ein : " wrappingWidth="440.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="ct2" maxHeight="10.0" maxWidth="30.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="25.0" prefWidth="200.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                              <Button fx:id="btnv" mnemonicParsing="false" text="Verschlüsseln" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="300.0" />
+                              <Button fx:id="btne" mnemonicParsing="false" text="Entschlüsseln" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="640.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="640.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                              <TextArea fx:id="ct3" maxWidth="500.0" prefHeight="200.0" prefWidth="465.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+    <Tab text="Vigenerre Chiffre">
+         <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <VBox layoutX="-6.0" prefHeight="400.0" prefWidth="640.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="640.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="               Bitte geben sie den Text zum Ver- bzw. Entschlüsseln ein" wrappingWidth="640.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                              <TextArea fx:id="vt1" maxWidth="500.0" prefHeight="100.0" prefWidth="465.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                           </children>
+                        </HBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="640.0" />
+                        <HBox prefHeight="35.0" prefWidth="200.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bitte geben sie eine Schlüssel ein" wrappingWidth="280.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="vt2" maxHeight="25.0" maxWidth="185.0" prefHeight="25.0" prefWidth="185.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="25.0" prefWidth="200.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                              <Button fx:id="btnv2" mnemonicParsing="false" text="Verschlüsseln" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="300.0" />
+                              <Button fx:id="btne2" mnemonicParsing="false" text="Entschlüsseln" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="640.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="640.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                              <TextArea fx:id="vt3" maxWidth="500.0" prefHeight="200.0" prefWidth="465.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+    <Tab text="RSA - Verfahren">
+         <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <VBox layoutX="-6.0" prefHeight="400.0" prefWidth="640.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="640.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="               Bitte geben sie den Text zum Ver- bzw. Entschlüsseln ein" wrappingWidth="640.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                              <TextArea fx:id="rt1" maxWidth="500.0" prefHeight="100.0" prefWidth="465.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                           </children>
+                        </HBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="640.0" />
+                        <HBox prefHeight="35.0" prefWidth="200.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bitte geben sie zwei Primzahlen p und q ein" wrappingWidth="350.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="rt2" maxHeight="25.0" maxWidth="60.0" prefHeight="25.0" prefWidth="50.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="15.0" />
+                              <TextField fx:id="rt3" prefHeight="25.0" prefWidth="50.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="25.0" prefWidth="200.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                              <Button fx:id="btnv3" mnemonicParsing="false" text="Verschlüsseln" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="300.0" />
+                              <Button fx:id="btne3" mnemonicParsing="false" text="Entschlüsseln" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="640.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="640.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                              <TextArea fx:id="rt4" maxWidth="500.0" prefHeight="200.0" prefWidth="465.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
