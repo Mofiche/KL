@@ -1,6 +1,6 @@
-public class Vigenere {
+class Vigenere {
 
-    String encrypt(String input, String key) {
+    String encrypt(String input, String key) { // Methode zur Verschlüsselung
         String ret = "";
         input = input.replaceAll("[^a-zA-Z]","").toUpperCase();
         for( int i = 0; i < input.length(); ++i )
@@ -10,7 +10,7 @@ public class Vigenere {
         return ret.toLowerCase();
     }
 
-    String decrypt(String input, String key) {
+    String decrypt(String input, String key) { // Methode zur Entschlüsselung
         String ret = "";
         input = input.replaceAll("[^a-zA-Z]","").toUpperCase();
         for( int i = 0; i < input.length(); ++i )

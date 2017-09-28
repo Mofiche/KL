@@ -1,5 +1,4 @@
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -8,14 +7,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import javax.crypto.BadPaddingException;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
 import javax.swing.*;
-import java.math.BigInteger;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
 import java.util.Objects;
 
 public class GUI extends Application{
@@ -25,8 +17,6 @@ public class GUI extends Application{
 
         // Algorithmen Bibliothek wird initalisiert
         Algorithmen alg = new Algorithmen();
-
-        byte[] zwischen;
 
         Parent root = FXMLLoader.load(getClass().getResource("guikl.fxml")); // Design der GUI wird geladen
         stage.setResizable(false);  // Das Fenster kann nicht durch den Benutzer in der Größe verändert werden
@@ -69,8 +59,7 @@ public class GUI extends Application{
             }
             else{
                 txt2_c.setText( // Der Text des Ausgabefeldes wird gesetzt
-                        alg.Caesar_encrypt( // Die entsprechende Methode wird aufgerufen
-                                txt_c.getText().toLowerCase(),key)); // die benötigten Parameter werden übergeben
+                        alg.Caesar_encrypt(txt_c.getText().toLowerCase(),key)); // Methode wird angewandt
             }
         });
 
@@ -84,8 +73,7 @@ public class GUI extends Application{
             }
             else{
                 txt2_c.setText( // Der Text des Ausgabefeldes wird gesetzt
-                        alg.Caesar_decrypt( // Die entsprechende Methode wird aufgerufen
-                                txt_c.getText().toLowerCase(),key)); // die benötigten Parameter werden übergeben
+                        alg.Caesar_decrypt(txt_c.getText().toLowerCase(),key)); // Methode wird angewandt
             }
         });
 
@@ -94,8 +82,7 @@ public class GUI extends Application{
         btnv2.setOnAction(e -> {
             // Es wird geprüft ob das Eingabefeld des Schlüssels leer ist
             if(!txt_v.getText().isEmpty()) {
-                txt2_v.setText(alg.Vigenere_encrypt( // Die entsprechende Methode wird aufgerufen
-                        txt_v.getText().toLowerCase(), key_v.getText())); // die benötigten Parameter werden übergeben
+                txt2_v.setText(alg.Vigenere_encrypt(txt_v.getText().toLowerCase(), key_v.getText())); // Methode wird angewandt
             }
         });
 
@@ -103,21 +90,29 @@ public class GUI extends Application{
         //Aktion des Entschlüsselungsknopfes der Vigenerre-Chiffre wird mittels Lamda Befehl definiert
         btne2.setOnAction(e -> {
             if(!txt_v.getText().isEmpty()) { // Es wird geprüft ob das Eingabefeld des Schlüssels leer ist
-                txt2_v.setText(alg.Vigenere_decrypt(    // Die entsprechende Methode wird aufgerufen
-                        txt_v.getText().toLowerCase(), key_v.getText())); // die benötigten Parameter werden übergeben
+                txt2_v.setText(alg.Vigenere_decrypt(txt_v.getText().toLowerCase(), key_v.getText())); // Methode wird angewandt
             }
         });
 
 
+        //Aktion des Entschlüsselungsknopfes der RSA-Verschlüsselung wird mittel Lamda Befehl definiert
        btnv3.setOnAction( e -> {
-           txt2_r.setText(alg.RSA_encrypt(txt_r.getText(),new RSAKey(23,143)));
+           if(!(key_r.getText().isEmpty() && key2_r.getText().isEmpty())) { // Prüfung ob die Eingabefelder leer sind
+               long p = Integer.parseInt(key_r.getText()); // Variable p wird aus dem Eingabefeld geholt
+               long q = Integer.parseInt(key2_r.getText()); // Variable p wird aus dem Eingabefeld geholt
+               RSAKey key = new RSA().gen(p, q, 65537)[0]; // Öffentlicher Schlüssel wird generiert ; 65537 ist eine gerne verwendete Zahl
+
+               txt2_r.setText(alg.RSA_crypt(txt_r.getText(), key)); // Methode wird angewandt
+           }
        });
 
-
-
        btne3.setOnAction(e -> {
-           txt2_r.setText(alg.RSA_decrypt(txt_r.getText(),new RSAKey(47,143)));
-
+           if(!(key_r.getText().isEmpty() && key2_r.getText().isEmpty())) { // Prüfung ob die Eingabefelder leer sind
+               long p = Integer.parseInt(key_r.getText());// Variable p wird aus dem Eingabefeld geholt
+               long q = Integer.parseInt(key2_r.getText());// Variable p wird aus dem Eingabefeld geholt
+               RSAKey key = new RSA().gen(p, q, 65537)[1];// Privater Schlüssel wird generiert ; 65537 ist eine gerne verwendete Zahl
+               txt2_r.setText(alg.RSA_crypt(txt_r.getText(), key)); // Methode wird angewandt
+           }
        });
 
 
@@ -125,17 +120,6 @@ public class GUI extends Application{
         // Das Fenster wird "fertig" gemacht und erscheint
         stage.setScene(scene);
         stage.show();
-    }
-
-    private String b2s(byte[] bytes) {
-       String ret = "";
-
-        for (byte a: bytes
-             ) {
-            ret += (char) a;
-        }
-
-        return ret;
     }
 
 

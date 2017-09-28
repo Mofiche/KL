@@ -2,9 +2,9 @@
 class Caesar {
 
 
-    String encrypt(String input, int key){
+    String encrypt(String input, int key){ // Methode zur Verschlüsselung
         String ret = "";
-        input = input.replaceAll("[^a-zA-Z]"," ").toUpperCase();
+        input = input.replaceAll("[^a-zA-Z]","").toUpperCase();
         for( int i = 0; i < input.length(); ++i )
         {
             if(input.charAt(i) == ' ') ret+= input.charAt(i);
@@ -15,7 +15,7 @@ class Caesar {
         return ret.toLowerCase();
     }
 
-    String decrypt(String input, int key){
+    String decrypt(String input, int key){ // Methode zur Entschlüsselung
         String ret = "";
         input = input.toUpperCase();
         for( int i = 0; i < input.length(); ++i ) {
