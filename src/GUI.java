@@ -50,6 +50,8 @@ public class GUI extends Application{
         Button btnv3 = (Button) root.lookup("#btnv3");
         Button btne3 = (Button) root.lookup("#btne3");
 
+
+
         //Aktion des Verschlüsselungsknopfes der Cäsar-Chiffre wird mittels Lamda Befehl definiert
         btnv.setOnAction(e -> {
             Integer key = Integer.parseInt(key_c.getText());
@@ -94,12 +96,11 @@ public class GUI extends Application{
             }
         });
 
-
         //Aktion des Entschlüsselungsknopfes der RSA-Verschlüsselung wird mittel Lamda Befehl definiert
        btnv3.setOnAction( e -> {
            if(!(key_r.getText().isEmpty() && key2_r.getText().isEmpty())) { // Prüfung ob die Eingabefelder leer sind
                long p = Integer.parseInt(key_r.getText()); // Variable p wird aus dem Eingabefeld geholt
-               long q = Integer.parseInt(key2_r.getText()); // Variable p wird aus dem Eingabefeld geholt
+               long q = Integer.parseInt(key2_r.getText()); // Variable q wird aus dem Eingabefeld geholt
                RSAKey key = new RSA().gen(p, q, 65537)[0]; // Öffentlicher Schlüssel wird generiert ; 65537 ist eine gerne verwendete Zahl
 
                txt2_r.setText(alg.RSA_crypt(txt_r.getText(), key)); // Methode wird angewandt
@@ -109,12 +110,11 @@ public class GUI extends Application{
        btne3.setOnAction(e -> {
            if(!(key_r.getText().isEmpty() && key2_r.getText().isEmpty())) { // Prüfung ob die Eingabefelder leer sind
                long p = Integer.parseInt(key_r.getText());// Variable p wird aus dem Eingabefeld geholt
-               long q = Integer.parseInt(key2_r.getText());// Variable p wird aus dem Eingabefeld geholt
+               long q = Integer.parseInt(key2_r.getText());// Variable q wird aus dem Eingabefeld geholt
                RSAKey key = new RSA().gen(p, q, 65537)[1];// Privater Schlüssel wird generiert ; 65537 ist eine gerne verwendete Zahl
                txt2_r.setText(alg.RSA_crypt(txt_r.getText(), key)); // Methode wird angewandt
            }
        });
-
 
 
         // Das Fenster wird "fertig" gemacht und erscheint

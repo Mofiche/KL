@@ -1,3 +1,4 @@
+
 class Algorithmen{
 
    private Caesar caesar = new Caesar();  // Cäsar Referenz wird initialisiert
@@ -23,7 +24,4 @@ class Algorithmen{
     String RSA_crypt(String input, RSAKey key){
         return rsa.crypt(input,key); // Anwendung der encrypt-Methode der RSA Klasse
     }
-
-
-
 }

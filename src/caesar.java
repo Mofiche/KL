@@ -1,7 +1,5 @@
 
 class Caesar {
-
-
     String encrypt(String input, int key){ // Methode zur Verschlüsselung
         String ret = "";
         input = input.replaceAll("[^a-zA-Z]","").toUpperCase();
@@ -26,7 +24,5 @@ class Caesar {
         }
         return ret.toLowerCase();
     }
-
-
 
 }
